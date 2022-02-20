@@ -27,7 +27,13 @@ function CardsContainer() {
   }
 
   const cards = pokemons.map((pokemon) => {
-    return <Cards img={pokemon.sprites.front_default} name={pokemon.name} />;
+    return (
+      <Cards
+        img={pokemon.sprites.front_default}
+        name={pokemon.name}
+        key={pokemon.id}
+      />
+    );
   });
 
   return <>{cards}</>;
