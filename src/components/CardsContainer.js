@@ -10,6 +10,8 @@ function CardsContainer() {
 
   const [score, setScore] = useState(0);
 
+  const [maxScore, setMaxScore] = useState(0);
+
   const [gameState, setGameState] = useState(false);
 
   const [selectedPokemons, setSelecetPokemons] = useState([]);
@@ -42,6 +44,7 @@ function CardsContainer() {
       setScore((prevScore) => prevScore + 1);
     } else {
       setGameState(true);
+      setMaxScore(score);
     }
   }
 
@@ -67,7 +70,7 @@ function CardsContainer() {
 
   return (
     <>
-      <Scores score={score} />
+      <Scores score={score} maxScore={maxScore} />
       {score < 12 && !gameState ? (
         <div className="cards-container">{cards}</div>
       ) : (
