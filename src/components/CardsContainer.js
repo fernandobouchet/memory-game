@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react";
 import "./styles/CardsContainer.css";
+import "./Utils";
 import Cards from "./Cards";
+import { MixPokemons } from "./Utils";
 
 function CardsContainer() {
   const [pokemons, setPokemons] = useState([]);
 
-  useEffect(() => getPokemonsNumbers());
+  useEffect(() => getPokemonsNumbers(), []);
 
   async function getPokemonsNumbers() {
     const pokemonsArray = [];
@@ -13,7 +15,8 @@ function CardsContainer() {
       const result = await getPokemons(i);
       pokemonsArray.push(result);
     }
-    setPokemons(pokemonsArray);
+    const pokemons = MixPokemons(pokemonsArray);
+    setPokemons(pokemons);
   }
 
   async function getPokemons(number) {
@@ -32,11 +35,16 @@ function CardsContainer() {
         img={pokemon.sprites.front_default}
         name={pokemon.name}
         key={pokemon.id}
+        shuffle={() => setPokemons([...MixPokemons(pokemons)])}
       />
     );
   });
 
-  return <div className="cards-container">{cards}</div>;
+  return (
+    <>
+      <div className="cards-container">{cards}</div>
+    </>
+  );
 }
 
 export default CardsContainer;
