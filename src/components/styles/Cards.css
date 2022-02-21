@@ -1,0 +1,15 @@
+.card {
+  border-style: solid;
+  border-width: 0.1rem;
+  border-radius: 15px;
+  margin: 10px;
+}
+
+.pokemon-image {
+  width: 7rem;
+}
+
+.pokemon-name {
+  font-size: 1rem;
+  margin: 0;
+}

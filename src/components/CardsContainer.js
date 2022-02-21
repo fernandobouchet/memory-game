@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
+import "./styles/CardsContainer.css";
 import Cards from "./Cards";
 
 function CardsContainer() {
   const [pokemons, setPokemons] = useState([]);
 
-  useEffect(() => getPokemonsNumbers(), []);
+  useEffect(() => getPokemonsNumbers());
 
   async function getPokemonsNumbers() {
     const pokemonsArray = [];
@@ -19,7 +20,6 @@ function CardsContainer() {
     try {
       const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${number}`);
       const data = await res.json();
-      console.log(data);
       return data;
     } catch (error) {
       console.log(error);
@@ -36,7 +36,7 @@ function CardsContainer() {
     );
   });
 
-  return <>{cards}</>;
+  return <div className="cards-container">{cards}</div>;
 }
 
 export default CardsContainer;

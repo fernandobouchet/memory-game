@@ -1,8 +1,10 @@
+import "./styles/Cards.css";
+
 function Cards(props) {
   return (
-    <div>
-      <img src={props.img} alt="" />
-      <h2>{props.name}</h2>
+    <div className="card">
+      <img src={props.img} alt="" className="pokemon-image" />
+      <h2 className="pokemon-name">{props.name}</h2>
     </div>
   );
 }
