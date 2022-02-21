@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import "./styles/CardsContainer.css";
 import "./Utils";
 import Cards from "./Cards";
+import Buttons from "./Buttons";
 import { MixPokemons } from "./Utils";
 import Scores from "./Scores";
 
@@ -17,6 +18,12 @@ function CardsContainer() {
   const [selectedPokemons, setSelecetPokemons] = useState([]);
 
   useEffect(() => getPokemonsNumbers(), []);
+
+  useEffect(() => {
+    if (score > maxScore) {
+      setMaxScore(score);
+    }
+  }, [score]);
 
   async function getPokemonsNumbers() {
     const pokemonsArray = [];
@@ -44,7 +51,6 @@ function CardsContainer() {
       setScore((prevScore) => prevScore + 1);
     } else {
       setGameState(true);
-      setMaxScore(score);
     }
   }
 
@@ -76,6 +82,14 @@ function CardsContainer() {
       ) : (
         <div>{result()}</div>
       )}
+      <Buttons
+        restart={() => {
+          setGameState(false);
+          setScore(0);
+          setSelecetPokemons([]);
+          getPokemonsNumbers();
+        }}
+      />
     </>
   );
 }
