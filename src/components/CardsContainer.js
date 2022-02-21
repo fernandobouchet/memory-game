@@ -3,9 +3,16 @@ import "./styles/CardsContainer.css";
 import "./Utils";
 import Cards from "./Cards";
 import { MixPokemons } from "./Utils";
+import Scores from "./Scores";
 
 function CardsContainer() {
   const [pokemons, setPokemons] = useState([]);
+
+  const [score, setScore] = useState(0);
+
+  const [gameState, setGameState] = useState(false);
+
+  const [selectedPokemons, setSelecetPokemons] = useState([]);
 
   useEffect(() => getPokemonsNumbers(), []);
 
@@ -29,6 +36,15 @@ function CardsContainer() {
     }
   }
 
+  function updateScore(pokemonName) {
+    if (!selectedPokemons.includes(pokemonName)) {
+      setSelecetPokemons([...selectedPokemons, pokemonName]);
+      setScore((prevScore) => prevScore + 1);
+    } else {
+      setGameState(true);
+    }
+  }
+
   const cards = pokemons.map((pokemon) => {
     return (
       <Cards
@@ -36,13 +52,27 @@ function CardsContainer() {
         name={pokemon.name}
         key={pokemon.id}
         shuffle={() => setPokemons([...MixPokemons(pokemons)])}
+        changeScore={updateScore}
       />
     );
   });
 
+  function result() {
+    if (gameState) {
+      return <h2>You Loose!</h2>;
+    } else {
+      return <h2>You Win!</h2>;
+    }
+  }
+
   return (
     <>
-      <div className="cards-container">{cards}</div>
+      <Scores score={score} />
+      {score < 12 && !gameState ? (
+        <div className="cards-container">{cards}</div>
+      ) : (
+        <div>{result()}</div>
+      )}
     </>
   );
 }

@@ -3,6 +3,7 @@
   border-width: 0.1rem;
   border-radius: 15px;
   margin: 10px;
+  cursor: pointer;
 }
 
 .pokemon-image {

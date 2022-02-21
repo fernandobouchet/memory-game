@@ -2,7 +2,13 @@ import "./styles/Cards.css";
 
 function Cards(props) {
   return (
-    <div className="card" onClick={props.shuffle}>
+    <div
+      className="card"
+      onClick={() => {
+        props.changeScore(props.name);
+        props.shuffle();
+      }}
+    >
       <img src={props.img} alt="" className="pokemon-image" />
       <h2 className="pokemon-name">{props.name}</h2>
     </div>
