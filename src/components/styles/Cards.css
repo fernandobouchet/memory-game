@@ -1,9 +1,15 @@
 .card {
-  border-style: solid;
   border-width: 0.1rem;
   border-radius: 15px;
   margin: 10px;
   cursor: pointer;
+  transition: all 100ms ease 0s;
+
+  box-shadow: rgba(0, 0, 0, 0.55) 0px 5px 15px;
+}
+
+.card:hover {
+  transform: scale(1.1);
 }
 
 .pokemon-image {
@@ -12,5 +18,7 @@
 
 .pokemon-name {
   font-size: 1rem;
-  margin: 0;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+
+  margin: 0 0 1rem 0;
 }

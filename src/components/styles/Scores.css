@@ -1,0 +1,10 @@
+.scores-container {
+  display: flex;
+  justify-content: center;
+  gap: 10rem;
+  padding-bottom: 2rem;
+}
+
+.score {
+  font-size: 1rem;
+}

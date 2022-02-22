@@ -1,5 +1,11 @@
+import "./styles/Header.css";
+
 function Header() {
-  return <h1>Pokémon Memory Game</h1>;
+  return (
+    <div className="header-container">
+      <h1 className="title">Pokémon Memory Game</h1>
+    </div>
+  );
 }
 
 export default Header;

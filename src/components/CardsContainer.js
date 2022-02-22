@@ -74,22 +74,24 @@ function CardsContainer() {
     }
   }
 
+  function restart() {
+    setGameState(false);
+    setScore(0);
+    setSelecetPokemons([]);
+    getPokemonsNumbers();
+  }
+
   return (
     <>
       <Scores score={score} maxScore={maxScore} />
       {score < 12 && !gameState ? (
         <div className="cards-container">{cards}</div>
       ) : (
-        <div>{result()}</div>
+        <>
+          <div>{result()}</div>
+          <Buttons restart={() => restart()} />
+        </>
       )}
-      <Buttons
-        restart={() => {
-          setGameState(false);
-          setScore(0);
-          setSelecetPokemons([]);
-          getPokemonsNumbers();
-        }}
-      />
     </>
   );
 }
