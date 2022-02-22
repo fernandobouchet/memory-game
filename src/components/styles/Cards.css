@@ -17,6 +17,17 @@
 .pokemon-name {
   font-size: 1rem;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-
   margin: 0 0 1rem 0;
+}
+
+@media (max-width: 480px) {
+  .card {
+    margin: 4px;
+  }
+  .pokemon-image {
+    width: 6rem;
+  }
+  .pokemon-name {
+    font-size: 0.7rem;
+  }
 }

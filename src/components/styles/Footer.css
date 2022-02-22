@@ -8,3 +8,11 @@
   font-size: 0.7rem;
   border-top-style: solid;
 }
+
+@media (max-width: 480px) {
+  #footer {
+    height: 0.4rem;
+    padding: 0.4rem;
+    font-size: 0.6rem;
+  }
+}

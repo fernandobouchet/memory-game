@@ -7,3 +7,9 @@
 .result-container {
   margin-top: 10rem;
 }
+
+@media (max-width: 480px) {
+  .cards-container {
+    grid-template-columns: repeat(3, 7rem);
+  }
+}
