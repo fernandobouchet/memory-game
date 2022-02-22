@@ -1,0 +1,19 @@
+.button-container {
+  padding-top: 10rem;
+}
+
+.button {
+  font-size: 1rem;
+  font-family: inherit;
+  background: #f28f3b;
+  cursor: pointer;
+  border-radius: 5px;
+  padding: 1rem;
+  height: 4rem;
+  width: 10rem;
+  transition: all 100ms ease 0s;
+}
+
+.button:hover {
+  transform: scale(1.1);
+}

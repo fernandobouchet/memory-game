@@ -1,5 +1,8 @@
 .header-container {
-  height: 5rem;
+  background-color: #c8553d;
+  height: 4rem;
+  padding-top: 2rem;
+  border-bottom-style: solid;
 }
 
 .title {

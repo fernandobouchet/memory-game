@@ -3,3 +3,7 @@
   grid-template-columns: repeat(4, 10rem);
   justify-content: center;
 }
+
+.result-container {
+  margin-top: 10rem;
+}

@@ -68,15 +68,16 @@ function CardsContainer() {
 
   function result() {
     if (gameState) {
-      return <h2>You Loose!</h2>;
+      return <h2 className="result">You Loose!</h2>;
     } else {
-      return <h2>You Win!</h2>;
+      return <h2 className="result">You Win!</h2>;
     }
   }
 
   function restart() {
     setGameState(false);
     setScore(0);
+    setPokemons([]);
     setSelecetPokemons([]);
     getPokemonsNumbers();
   }
@@ -88,7 +89,7 @@ function CardsContainer() {
         <div className="cards-container">{cards}</div>
       ) : (
         <>
-          <div>{result()}</div>
+          <div className="result-container">{result()}</div>
           <Buttons restart={() => restart()} />
         </>
       )}

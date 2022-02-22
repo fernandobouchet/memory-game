@@ -2,9 +2,13 @@
   display: flex;
   justify-content: center;
   gap: 10rem;
-  padding-bottom: 2rem;
+  padding: 1rem;
+  margin: 1rem;
 }
 
 .score {
   font-size: 1rem;
+  border-radius: 15px;
+  padding: 0.5rem;
+  box-shadow: rgba(0, 0, 0, 0.55) 0px 5px 15px;
 }
