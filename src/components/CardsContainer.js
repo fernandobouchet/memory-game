@@ -3,7 +3,7 @@ import "./styles/CardsContainer.css";
 import "./Utils";
 import Cards from "./Cards";
 import Buttons from "./Buttons";
-import { MixPokemons } from "./Utils";
+import { MixPokemons, randomNumbersNoRepeat } from "./Utils";
 import Scores from "./Scores";
 
 function CardsContainer() {
@@ -27,12 +27,12 @@ function CardsContainer() {
 
   async function getPokemonsNumbers() {
     const pokemonsArray = [];
-    for (let i = 1; i < 13; i++) {
-      const result = await getPokemons(i);
+    const randomPokemonNumbers = randomNumbersNoRepeat();
+    for (let i = 1; i < randomPokemonNumbers.length; i++) {
+      const result = await getPokemons(randomPokemonNumbers[i]);
       pokemonsArray.push(result);
     }
-    const pokemons = MixPokemons(pokemonsArray);
-    setPokemons(pokemons);
+    setPokemons(pokemonsArray);
   }
 
   async function getPokemons(number) {
