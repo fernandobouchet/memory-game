@@ -12,7 +12,7 @@ It makes usage of the following API: ['PokéAPI'](https://pokeapi.co/).
 
 ## Screenshots
 
-![App Screenshot](https://github.com/fernandobouchet/memory-game/blob/main/memory-game_preview.png?raw=true)
+![App Screenshot](https://github.com/fernandobouchet/memory-game/blob/main/memory-game_preview.jpg?raw=true)
 
 ## Getting started
 
